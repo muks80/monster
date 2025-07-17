@@ -1,5 +1,10 @@
 # Monster
 
+## Icons
+
+I used svgs for the icons and put them in their own components. I stripped them back and added a customStyles Input allowing
+Tailwind utility classes to be used and set using NgClass in the template.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
 ## Development server

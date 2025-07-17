@@ -5,5 +5,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './moon-svg.component.html',
 })
 export class MoonSvgComponent {
-  @Input() customStyles = '';
+  @Input({ required: true }) customStyles = '';
 }

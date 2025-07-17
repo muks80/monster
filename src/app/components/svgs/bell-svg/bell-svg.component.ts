@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -6,5 +5,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './bell-svg.component.html',
 })
 export class BellSvgComponent {
-  @Input() customStyles = '';
+  @Input({ required: true }) customStyles = '';
 }
