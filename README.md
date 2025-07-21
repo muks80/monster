@@ -1,10 +1,5 @@
 # Monster
 
-## Icons
-
-I used svgs for the icons and put them in their own components. I stripped them back and added a customStyles Input allowing
-Tailwind utility classes to be used and set using NgClass in the template.
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
 ## Development server
@@ -30,3 +25,25 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+<!-- Alternative Footer contents-->
+<!-- <div class="flex flex-col items-center gap-0.5">
+  <app-store-svg customStyles="w-5 h-5 fill-green-600" />
+  <div class="w-16 h-3.5 bg-green-100 rounded-full"></div>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+  <app-truck-svg customStyles="w-5 h-5 fill-gray-600" />
+  <div class="w-16 h-3.5 bg-gray-200 rounded-full"></div>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+  <app-pen-nib-svg customStyles="w-5 h-5 fill-gray-600" />
+  <div class="w-16 h-3.5 bg-gray-200 rounded-full"></div>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+  <app-chart-mixed-svg customStyles="w-5 h-5 fill-gray-600" />
+  <div class="w-12 h-3.5 bg-gray-200 rounded-full"></div>
+</div>
+<div class="flex flex-col items-center gap-0.5">
+  <app-messages-svg customStyles="w-5 h-5 fill-gray-600" />
+  <div class="w-8 h-3.5 bg-gray-200 rounded-full"></div>
+</div> -->
