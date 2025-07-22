@@ -12,6 +12,9 @@ import { PenNibSvgComponent } from './components/svgs/pen-nib-svg/pen-nib-svg.co
 import { ChartMixedSvgComponent } from './components/svgs/chart-mixed-svg/chart-mixed-svg.component';
 import { MessagesSvgComponent } from './components/svgs/messages-svg/messages-svg.component';
 import { NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { StarSvgComponent } from './components/svgs/star-svg/star-svg.component';
+import { EyeSvgComponent } from './components/svgs/eye-svg/eye-svg.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +27,11 @@ import { NgClass } from '@angular/common';
     PenNibSvgComponent,
     ChartMixedSvgComponent,
     MessagesSvgComponent,
+    StarSvgComponent,
+    EyeSvgComponent,
+    StarSvgComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgClass],
+  imports: [BrowserModule, AppRoutingModule, NgClass, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,6 +1,7 @@
 <div class="flex flex-col justify-between min-h-screen">
   <div>
-    <header class="h-16 md:w-[768px] md:mx-auto p-4">
+    <!-- Header -->
+    <header class="h-16 md:w-[768px] md:mx-auto p-4 border-b mb-8">
       <div class="flex justify-between h-8">
         <div class="flex items-center gap-[22px]">
           <div class="w-8 h-8 bg-gray-400 rounded-md"></div>
@@ -14,10 +15,106 @@
       </div>
     </header>
 
-    <main></main>
+    <main>
+      <!-- Banner -->
+      <div class="w-64 h-16 mx-auto my-16 bg-gray-300 rounded-full"></div>
+
+      <!-- Search Bar -->
+      <div
+        class="md:w-[768px] md:mx-auto flex px-4 pt-4 bg-white border border-b-0 rounded-lg rounded-b-none"
+      >
+        <div class="w-full pb-4 border-b">
+          <input
+            [(ngModel)]="searchText"
+            (input)="onSearch()"
+            type="search"
+            class="p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 w-64"
+            placeholder="Search stores"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="md:w-[768px] md:mx-auto px-4 pt-4 bg-white border-x">
+        <div class="flex justify-between pb-4">
+          <div class="flex items-center">
+            <input
+              [(ngModel)]="includeSupermarkets"
+              (change)="onCheckboxChange()"
+              type="checkbox"
+              id="include-supermarkets"
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
+            />
+            <label
+              for="include-supermarkets"
+              class="ml-2 text-sm font-medium text-gray-900 cursor-pointer"
+            >
+              Include Supermarkets
+            </label>
+          </div>
+
+          <select
+            (change)="onFilterByRegion($event)"
+            class="p-2.5 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50"
+          >
+            <option value="all" selected>All Regions</option>
+            <ng-container *ngFor="let region of regions">
+              <option [value]="region.region">{{ region.region }}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div
+        class="md:w-[768px] md:mx-auto w-full overflow-x-scroll border border-t-0 rounded-lg rounded-t-none"
+      >
+        <table class="w-full text-sm text-left text-gray-500">
+          <thead
+            class="text-xs font-semibold text-gray-500 uppercase bg-gray-50"
+          >
+            <tr>
+              <th scope="col" class="px-4 py-2">Store Name</th>
+              <th scope="col" class="px-4 py-2">Region</th>
+              <th scope="col" class="px-4 py-2">Orders</th>
+              <th scope="col" class="px-4 py-2">Star</th>
+              <th scope="col" class="px-4 py-2">Eye</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let store of filteredStores">
+              <tr>
+                <th
+                  scope="row"
+                  class="px-4 py-2 text-sm font-medium text-gray-900"
+                >
+                  {{ store.storeName }}
+                </th>
+                <td class="px-4 py-2 text-sm font-medium">
+                  {{ store.region }}
+                </td>
+                <td class="px-4 py-2 text-sm font-medium">
+                  {{ store.orders }}
+                </td>
+                <td class="px-4 py-2 text-left">
+                  <app-star-svg customStyles="w-4 h-4 fill-gray-600" />
+                </td>
+                <td class="px-4 py-2 text-left">
+                  <app-eye-svg customStyles="w-4 h-4 fill-red-600" />
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </main>
   </div>
 
-  <footer class="h-16 md:w-[768px] md:mx-auto flex items-center justify-around">
+  <!-- footer -->
+  <footer
+    class="border-t mt-8 h-16 md:w-[768px] md:mx-auto flex items-center justify-around"
+  >
     <div
       *ngFor="let item of footerItems"
       class="flex flex-col items-center gap-0.5"
